@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a9908b42b1a0473e83daf7d7f216d814" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="TestDatabaseModel.BowlingType" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Club" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Country" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.ExtraBowlingFirst" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.ExtraBowlingSecond" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.HowOut" Width="1.5" PointX="0.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.IndividualScore" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Match" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.MatchState" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.MatchType" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Member" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.MemberType" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.PlayerType" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.PlayingHand" Width="1.5" PointX="3.75" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Series" Width="1.5" PointX="0.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Team" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Venue" Width="1.5" PointX="0.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestDatabaseModel.WinningMode" Width="1.5" PointX="0.75" PointY="30.125" IsExpanded="true" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_BowlingType" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Club_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingFirst_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingFirst_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingSecond_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingSecond_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_HowOut" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_BowledBy" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_Match" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_TeamId" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_DecidedToBat" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_MatchStateId" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_MatchTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_Series" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_Team_Away" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_Team_Home" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_TossWonBy" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Match_Venue" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Person_PersonType" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Person_PlayerHand" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Person_PlayerType" ManuallyRouted="false" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Person_Team" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TestDatabaseModel.ExtrasGiven" Width="1.5" PointX="5.25" PointY="16.125" />
+        <EntityTypeShape EntityType="TestDatabaseModel.MatchStat" Width="1.5" PointX="8.25" PointY="16.125" />
+        <EntityTypeShape EntityType="TestDatabaseModel.Result" Width="1.5" PointX="5.25" PointY="20.25" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingFirst_Match1" />
+        <AssociationConnector Association="TestDatabaseModel.FK_ExtraBowlingFirst_Team1" />
+        <AssociationConnector Association="TestDatabaseModel.FK_MatchStats_Match" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Results_Match" />
+        <AssociationConnector Association="TestDatabaseModel.FK_MatchStats_Team" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Results_TeamDecideToBat" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Results_TeamLost" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Results_TeamWon" />
+        <AssociationConnector Association="TestDatabaseModel.FK_Results_WinningMode" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_Match1" />
+        <AssociationConnector Association="TestDatabaseModel.FK_IndividualScores_Person1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
