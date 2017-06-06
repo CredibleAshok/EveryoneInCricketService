@@ -1,4 +1,10 @@
-﻿use TestDatabase
+
+USE [Testdatabase]
+GO
+/****** Object:  Table [dbo].[BowlingType]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[BowlingType](
 	[BowlingTypeId] [int] IDENTITY(1,1) NOT NULL,
@@ -10,7 +16,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Club]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Club]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -29,7 +35,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Country]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Country]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -49,7 +55,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ExtrasGiven]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[ExtrasGiven]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -69,7 +75,32 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[HowOut]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Feature]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[Feature](
+	[FeatureId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedBy] [int] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_Feature] PRIMARY KEY CLUSTERED 
+(
+	[FeatureId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[HowOut]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -84,7 +115,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[IndividualScores]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[IndividualScores]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +142,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Match]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Match]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +164,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[MatchState]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[MatchState]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,7 +179,7 @@ CREATE TABLE [dbo].[MatchState](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[MatchStats]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[MatchStats]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +199,7 @@ CREATE TABLE [dbo].[MatchStats](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[MatchType]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[MatchType]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,7 +214,7 @@ CREATE TABLE [dbo].[MatchType](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Member]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Member]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -205,7 +236,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[MemberType]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[MemberType]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -224,7 +255,7 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PlayerType]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[PlayerType]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,7 +270,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[PlayingHand]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[PlayingHand]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -254,7 +285,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Results]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Results]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -275,7 +306,50 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Series]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Role]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[Role](
+	[RoleId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](100) NOT NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedBy] [int] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_Role] PRIMARY KEY CLUSTERED 
+(
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[RoleFeature]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RoleFeature](
+	[RoleFeatureId] [int] IDENTITY(1,1) NOT NULL,
+	[RoleId] [int] NOT NULL,
+	[FeatureId] [int] NOT NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedBy] [int] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Series]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -292,7 +366,7 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Team]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[Team]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -310,7 +384,51 @@ PRIMARY KEY CLUSTERED
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[Venue]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[User]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[User](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](500) NOT NULL,
+	[ClubId] [int] NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedBy] [int] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[UserRole]    Script Date: 6/06/2017 12:12:38 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[UserRole](
+	[UserRoleId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[RoleId] [int] NOT NULL,
+	[ValidFrom] [datetime] NOT NULL,
+	[ValidTo] [datetime] NULL,
+	[CreatedBy] [int] NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[UpdatedBy] [int] NOT NULL,
+	[UpdatedDate] [datetime] NOT NULL
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Venue]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -333,7 +451,7 @@ CREATE TABLE [dbo].[Venue](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[WinningMode]    Script Date: 8/05/2017 5:23:28 PM ******/
+/****** Object:  Table [dbo].[WinningMode]    Script Date: 6/06/2017 12:12:38 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -349,99 +467,7 @@ CREATE TABLE [dbo].[WinningMode](
 
 GO
 SET IDENTITY_INSERT [dbo].[BowlingType] ON 
-Go
-CREATE TABLE [dbo].[Feature](
-	[FeaturesId] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](100) NOT NULL,
-	[ValidFrom] [datetime] NOT NULL,
-	[ValidTo] [datetime] NULL,
-	[CreatedBy] [int] NOT NULL,
-	[CreatedDate] [datetime] NOT NULL,
-	[UpdatedBy] [int] NOT NULL,
-	[UpdatedDate] [datetime] NOT NULL
-) ON [PRIMARY]
 
-GO
-
-SET ANSI_PADDING OFF
--- security table starts
-CREATE TABLE [dbo].[Role](
-	[RoleId] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](100) NOT NULL,
-	[ValidFrom] [datetime] NOT NULL,
-	[ValidTo] [datetime] NULL,
-	[CreatedBy] [int] NOT NULL,
-	[CreatedDate] [datetime] NOT NULL,
-	[UpdatedBy] [int] NOT NULL,
-	[UpdatedDate] [datetime] NOT NULL
-) ON [PRIMARY]
-
-CREATE TABLE [dbo].[RoleFeature](
-	[RoleFeatureId] [int] IDENTITY(1,1) NOT NULL,
-	[RoleId] [int] NOT NULL,
-	[FeatureId] [int] NOT NULL,
-	[ValidFrom] [datetime] NOT NULL,
-	[ValidTo] [datetime] NULL,
-	[CreatedBy] [int] NOT NULL,
-	[CreatedDate] [datetime] NOT NULL,
-	[UpdatedBy] [int] NOT NULL,
-	[UpdatedDate] [datetime] NOT NULL
-) ON [PRIMARY]
-GO
-
-ALTER TABLE [dbo].[RoleFeature]  WITH CHECK ADD  CONSTRAINT [FK_RoleFeature_RoleId] FOREIGN KEY([RoleId])
-REFERENCES [dbo].[Role] ([RoleId])
-GO
-
-ALTER TABLE [dbo].[RoleFeature] CHECK CONSTRAINT [FK_RoleFeature_RoleId]
-GO
-
-ALTER TABLE [dbo].[RoleFeature]  WITH CHECK ADD  CONSTRAINT [FK_RoleFeature_FeatureId] FOREIGN KEY([FeatureId])
-REFERENCES [dbo].[Feature] ([FeatureId])
-GO
-
-ALTER TABLE [dbo].[RoleFeature] CHECK CONSTRAINT [FK_RoleFeature_FeatureId]
-GO
-
-CREATE TABLE [dbo].[User](
-	[UserId] [int] IDENTITY(1,1) NOT NULL,
-	[Name] [varchar](500) NOT NULL,
-	[ClubId] [int] NULL,
-	[ValidFrom] [datetime] NOT NULL,
-	[ValidTo] [datetime] NULL,
-	[CreatedBy] [int] NULL,
-	[CreatedDate] [datetime] NOT NULL,
-	[UpdatedBy] [int] NOT NULL,
-	[UpdatedDate] [datetime] NOT NULL
-) ON [PRIMARY]
-
-CREATE TABLE [dbo].[UserRole](
-	[UserRoleId] [int] IDENTITY(1,1) NOT NULL,
-	[UserId] [int] NOT NULL,
-	[RoleId] [int] NOT NULL,
-	[ValidFrom] [datetime] NOT NULL,
-	[ValidTo] [datetime] NULL,
-	[CreatedBy] [int] NULL,
-	[CreatedDate] [datetime] NOT NULL,
-	[UpdatedBy] [int] NOT NULL,
-	[UpdatedDate] [datetime] NOT NULL
-) ON [PRIMARY]
-
-go
-ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRole_RoleId] FOREIGN KEY([RoleId])
-REFERENCES [dbo].[Role] ([RoleId])
-GO
-
-ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRole_RoleId]
-GO
-
-ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRole_UserId] FOREIGN KEY([UserId])
-REFERENCES [dbo].[Feature] ([UserId])
-GO
-
-ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRole_UserId]
-GO
--- security table ends
 GO
 INSERT [dbo].[BowlingType] ([BowlingTypeId], [BowlingType]) VALUES (1, N'Fast                                              ')
 GO
@@ -479,6 +505,35 @@ GO
 INSERT [dbo].[ExtrasGiven] ([ExtraScoreId], [MatchId], [TeamId], [Byes], [LegByes], [Wides], [NoBall]) VALUES (2, 1, 2, 3, 0, 4, 5)
 GO
 SET IDENTITY_INSERT [dbo].[ExtrasGiven] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Feature] ON 
+
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (1, N'View Match', CAST(N'2017-06-06 11:24:24.477' AS DateTime), CAST(N'2017-06-06 11:24:24.477' AS DateTime), 1, CAST(N'2017-06-06 11:24:24.477' AS DateTime), 1, CAST(N'2017-06-06 11:24:24.477' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (2, N'Add Match', CAST(N'2017-06-06 11:24:33.877' AS DateTime), CAST(N'2017-06-06 11:24:33.877' AS DateTime), 1, CAST(N'2017-06-06 11:24:33.877' AS DateTime), 1, CAST(N'2017-06-06 11:24:33.877' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (3, N'Modify Match', CAST(N'2017-06-06 11:24:39.290' AS DateTime), CAST(N'2017-06-06 11:24:39.290' AS DateTime), 1, CAST(N'2017-06-06 11:24:39.290' AS DateTime), 1, CAST(N'2017-06-06 11:24:39.290' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (4, N'View Result', CAST(N'2017-06-06 11:24:48.667' AS DateTime), CAST(N'2017-06-06 11:24:48.667' AS DateTime), 1, CAST(N'2017-06-06 11:24:48.667' AS DateTime), 1, CAST(N'2017-06-06 11:24:48.667' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (5, N'Add Result', CAST(N'2017-06-06 11:24:53.893' AS DateTime), CAST(N'2017-06-06 11:24:53.893' AS DateTime), 1, CAST(N'2017-06-06 11:24:53.893' AS DateTime), 1, CAST(N'2017-06-06 11:24:53.893' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (6, N'Modify Result', CAST(N'2017-06-06 11:24:58.440' AS DateTime), CAST(N'2017-06-06 11:24:58.440' AS DateTime), 1, CAST(N'2017-06-06 11:24:58.440' AS DateTime), 1, CAST(N'2017-06-06 11:24:58.440' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (7, N'View Venue', CAST(N'2017-06-06 11:25:09.800' AS DateTime), CAST(N'2017-06-06 11:25:09.800' AS DateTime), 1, CAST(N'2017-06-06 11:25:09.800' AS DateTime), 1, CAST(N'2017-06-06 11:25:09.800' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (8, N'Add Venue', CAST(N'2017-06-06 11:25:13.823' AS DateTime), CAST(N'2017-06-06 11:25:13.823' AS DateTime), 1, CAST(N'2017-06-06 11:25:13.823' AS DateTime), 1, CAST(N'2017-06-06 11:25:13.823' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (9, N'Modify Venue', CAST(N'2017-06-06 11:25:17.420' AS DateTime), CAST(N'2017-06-06 11:25:17.420' AS DateTime), 1, CAST(N'2017-06-06 11:25:17.420' AS DateTime), 1, CAST(N'2017-06-06 11:25:17.420' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (10, N'View Team', CAST(N'2017-06-06 11:25:33.390' AS DateTime), CAST(N'2017-06-06 11:25:33.390' AS DateTime), 1, CAST(N'2017-06-06 11:25:33.390' AS DateTime), 1, CAST(N'2017-06-06 11:25:33.390' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (11, N'Add Team', CAST(N'2017-06-06 11:25:37.800' AS DateTime), CAST(N'2017-06-06 11:25:37.800' AS DateTime), 1, CAST(N'2017-06-06 11:25:37.800' AS DateTime), 1, CAST(N'2017-06-06 11:25:37.800' AS DateTime))
+GO
+INSERT [dbo].[Feature] ([FeatureId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (12, N'Modify Team', CAST(N'2017-06-06 11:25:42.063' AS DateTime), CAST(N'2017-06-06 11:25:42.063' AS DateTime), 1, CAST(N'2017-06-06 11:25:42.063' AS DateTime), 1, CAST(N'2017-06-06 11:25:42.063' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[Feature] OFF
 GO
 SET IDENTITY_INSERT [dbo].[HowOut] ON 
 
@@ -685,6 +740,102 @@ INSERT [dbo].[Results] ([ResultsId], [MatchId], [WonBy], [LostBy], [DecidedToBat
 GO
 SET IDENTITY_INSERT [dbo].[Results] OFF
 GO
+SET IDENTITY_INSERT [dbo].[Role] ON 
+
+GO
+INSERT [dbo].[Role] ([RoleId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (1, N'Player', CAST(N'2017-06-06 11:21:57.523' AS DateTime), CAST(N'2017-06-06 11:21:57.523' AS DateTime), 1, CAST(N'2017-06-06 11:21:57.523' AS DateTime), 1, CAST(N'2017-06-06 11:21:57.523' AS DateTime))
+GO
+INSERT [dbo].[Role] ([RoleId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (2, N'Captain', CAST(N'2017-06-06 11:22:08.207' AS DateTime), CAST(N'2017-06-06 11:22:08.207' AS DateTime), 1, CAST(N'2017-06-06 11:22:08.207' AS DateTime), 1, CAST(N'2017-06-06 11:22:08.207' AS DateTime))
+GO
+INSERT [dbo].[Role] ([RoleId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (3, N'Umpire', CAST(N'2017-06-06 11:22:17.800' AS DateTime), CAST(N'2017-06-06 11:22:17.800' AS DateTime), 1, CAST(N'2017-06-06 11:22:17.800' AS DateTime), 1, CAST(N'2017-06-06 11:22:17.800' AS DateTime))
+GO
+INSERT [dbo].[Role] ([RoleId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (4, N'ClubManager', CAST(N'2017-06-06 11:22:40.030' AS DateTime), CAST(N'2017-06-06 11:22:40.030' AS DateTime), 1, CAST(N'2017-06-06 11:22:40.030' AS DateTime), 1, CAST(N'2017-06-06 11:22:40.030' AS DateTime))
+GO
+INSERT [dbo].[Role] ([RoleId], [Name], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (5, N'SuperUser', CAST(N'2017-06-06 11:22:50.527' AS DateTime), CAST(N'2017-06-06 11:22:50.527' AS DateTime), 1, CAST(N'2017-06-06 11:22:50.527' AS DateTime), 1, CAST(N'2017-06-06 11:22:50.527' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[Role] OFF
+GO
+SET IDENTITY_INSERT [dbo].[RoleFeature] ON 
+
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (1, 1, 1, CAST(N'2017-06-06 11:28:52.070' AS DateTime), CAST(N'2017-06-06 11:28:52.070' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.070' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.070' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (2, 1, 4, CAST(N'2017-06-06 11:28:52.160' AS DateTime), CAST(N'2017-06-06 11:28:52.160' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.160' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.160' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (3, 1, 7, CAST(N'2017-06-06 11:28:52.163' AS DateTime), CAST(N'2017-06-06 11:28:52.163' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.163' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.163' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (4, 1, 10, CAST(N'2017-06-06 11:28:52.167' AS DateTime), CAST(N'2017-06-06 11:28:52.167' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.167' AS DateTime), 1, CAST(N'2017-06-06 11:28:52.167' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (5, 2, 1, CAST(N'2017-06-06 11:30:01.907' AS DateTime), CAST(N'2017-06-06 11:30:01.907' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.907' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.907' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (6, 2, 4, CAST(N'2017-06-06 11:30:01.913' AS DateTime), CAST(N'2017-06-06 11:30:01.913' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.913' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.913' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (7, 2, 7, CAST(N'2017-06-06 11:30:01.917' AS DateTime), CAST(N'2017-06-06 11:30:01.917' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.917' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.917' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (8, 2, 10, CAST(N'2017-06-06 11:30:01.917' AS DateTime), CAST(N'2017-06-06 11:30:01.917' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.917' AS DateTime), 1, CAST(N'2017-06-06 11:30:01.917' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (9, 2, 11, CAST(N'2017-06-06 11:30:43.763' AS DateTime), CAST(N'2017-06-06 11:30:43.763' AS DateTime), 1, CAST(N'2017-06-06 11:30:43.763' AS DateTime), 1, CAST(N'2017-06-06 11:30:43.763' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (10, 2, 12, CAST(N'2017-06-06 11:30:43.770' AS DateTime), CAST(N'2017-06-06 11:30:43.770' AS DateTime), 1, CAST(N'2017-06-06 11:30:43.770' AS DateTime), 1, CAST(N'2017-06-06 11:30:43.770' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (11, 3, 1, CAST(N'2017-06-06 11:31:51.910' AS DateTime), CAST(N'2017-06-06 11:31:51.910' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.910' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.910' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (12, 3, 4, CAST(N'2017-06-06 11:31:51.913' AS DateTime), CAST(N'2017-06-06 11:31:51.913' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.913' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.913' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (13, 3, 7, CAST(N'2017-06-06 11:31:51.917' AS DateTime), CAST(N'2017-06-06 11:31:51.917' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.917' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.917' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (14, 3, 10, CAST(N'2017-06-06 11:31:51.920' AS DateTime), CAST(N'2017-06-06 11:31:51.920' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.920' AS DateTime), 1, CAST(N'2017-06-06 11:31:51.920' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (15, 3, 5, CAST(N'2017-06-06 11:32:37.087' AS DateTime), CAST(N'2017-06-06 11:32:37.087' AS DateTime), 1, CAST(N'2017-06-06 11:32:37.087' AS DateTime), 1, CAST(N'2017-06-06 11:32:37.087' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (16, 3, 6, CAST(N'2017-06-06 11:32:37.093' AS DateTime), CAST(N'2017-06-06 11:32:37.093' AS DateTime), 1, CAST(N'2017-06-06 11:32:37.093' AS DateTime), 1, CAST(N'2017-06-06 11:32:37.093' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (17, 4, 1, CAST(N'2017-06-06 11:33:13.270' AS DateTime), CAST(N'2017-06-06 11:33:13.270' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.270' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.270' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (18, 4, 4, CAST(N'2017-06-06 11:33:13.273' AS DateTime), CAST(N'2017-06-06 11:33:13.273' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.273' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.273' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (19, 4, 7, CAST(N'2017-06-06 11:33:13.277' AS DateTime), CAST(N'2017-06-06 11:33:13.277' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.277' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.277' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (20, 4, 10, CAST(N'2017-06-06 11:33:13.280' AS DateTime), CAST(N'2017-06-06 11:33:13.280' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.280' AS DateTime), 1, CAST(N'2017-06-06 11:33:13.280' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (21, 4, 2, CAST(N'2017-06-06 11:34:52.023' AS DateTime), CAST(N'2017-06-06 11:34:52.023' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.023' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.023' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (22, 4, 3, CAST(N'2017-06-06 11:34:52.023' AS DateTime), CAST(N'2017-06-06 11:34:52.023' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.023' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.023' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (23, 4, 5, CAST(N'2017-06-06 11:34:52.027' AS DateTime), CAST(N'2017-06-06 11:34:52.027' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.027' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.027' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (24, 4, 6, CAST(N'2017-06-06 11:34:52.030' AS DateTime), CAST(N'2017-06-06 11:34:52.030' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.030' AS DateTime), 1, CAST(N'2017-06-06 11:34:52.030' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (25, 4, 8, CAST(N'2017-06-06 11:35:39.693' AS DateTime), CAST(N'2017-06-06 11:35:39.693' AS DateTime), 1, CAST(N'2017-06-06 11:35:39.693' AS DateTime), 1, CAST(N'2017-06-06 11:35:39.693' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (26, 4, 9, CAST(N'2017-06-06 11:35:39.697' AS DateTime), CAST(N'2017-06-06 11:35:39.697' AS DateTime), 1, CAST(N'2017-06-06 11:35:39.697' AS DateTime), 1, CAST(N'2017-06-06 11:35:39.697' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (27, 5, 1, CAST(N'2017-06-06 11:37:14.720' AS DateTime), CAST(N'2017-06-06 11:37:14.720' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.720' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.720' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (28, 5, 2, CAST(N'2017-06-06 11:37:14.723' AS DateTime), CAST(N'2017-06-06 11:37:14.723' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.723' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.723' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (29, 5, 3, CAST(N'2017-06-06 11:37:14.727' AS DateTime), CAST(N'2017-06-06 11:37:14.727' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.727' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.727' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (30, 5, 4, CAST(N'2017-06-06 11:37:14.730' AS DateTime), CAST(N'2017-06-06 11:37:14.730' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.730' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.730' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (31, 5, 5, CAST(N'2017-06-06 11:37:14.737' AS DateTime), CAST(N'2017-06-06 11:37:14.737' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.737' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.737' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (32, 5, 6, CAST(N'2017-06-06 11:37:14.740' AS DateTime), CAST(N'2017-06-06 11:37:14.740' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.740' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.740' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (33, 5, 7, CAST(N'2017-06-06 11:37:14.743' AS DateTime), CAST(N'2017-06-06 11:37:14.743' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.743' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.743' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (34, 5, 8, CAST(N'2017-06-06 11:37:14.743' AS DateTime), CAST(N'2017-06-06 11:37:14.743' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.743' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.743' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (35, 5, 9, CAST(N'2017-06-06 11:37:14.747' AS DateTime), CAST(N'2017-06-06 11:37:14.747' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.747' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.747' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (36, 5, 10, CAST(N'2017-06-06 11:37:14.750' AS DateTime), CAST(N'2017-06-06 11:37:14.750' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.750' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.750' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (37, 5, 11, CAST(N'2017-06-06 11:37:14.753' AS DateTime), CAST(N'2017-06-06 11:37:14.753' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.753' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.753' AS DateTime))
+GO
+INSERT [dbo].[RoleFeature] ([RoleFeatureId], [RoleId], [FeatureId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (38, 5, 12, CAST(N'2017-06-06 11:37:14.757' AS DateTime), CAST(N'2017-06-06 11:37:14.757' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.757' AS DateTime), 1, CAST(N'2017-06-06 11:37:14.757' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[RoleFeature] OFF
+GO
 SET IDENTITY_INSERT [dbo].[Series] ON 
 
 GO
@@ -704,6 +855,36 @@ GO
 INSERT [dbo].[Team] ([TeamId], [Name], [ValidFrom], [ValidTo], [TeamFlagId]) VALUES (2, N'Mayland                                           ', CAST(N'2017-04-02 00:26:25.967' AS DateTime), CAST(N'2017-04-02 00:26:25.967' AS DateTime), 2)
 GO
 SET IDENTITY_INSERT [dbo].[Team] OFF
+GO
+SET IDENTITY_INSERT [dbo].[User] ON 
+
+GO
+INSERT [dbo].[User] ([UserId], [Name], [ClubId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (1, N'Player1', NULL, CAST(N'2017-06-06 11:20:11.960' AS DateTime), CAST(N'2017-06-06 11:20:11.960' AS DateTime), 1, CAST(N'2017-06-06 11:20:11.960' AS DateTime), 1, CAST(N'2017-06-06 11:20:11.960' AS DateTime))
+GO
+INSERT [dbo].[User] ([UserId], [Name], [ClubId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (2, N'Captain1', NULL, CAST(N'2017-06-06 11:20:25.773' AS DateTime), CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime))
+GO
+INSERT [dbo].[User] ([UserId], [Name], [ClubId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (3, N'Umpire1', NULL, CAST(N'2017-06-06 11:20:25.773' AS DateTime), CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime))
+GO
+INSERT [dbo].[User] ([UserId], [Name], [ClubId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (4, N'ClubManager1', NULL, CAST(N'2017-06-06 11:20:25.773' AS DateTime), CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime))
+GO
+INSERT [dbo].[User] ([UserId], [Name], [ClubId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (5, N'SuperUser1', NULL, CAST(N'2017-06-06 11:20:25.773' AS DateTime), CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime), 1, CAST(N'2017-06-06 11:20:25.773' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[User] OFF
+GO
+SET IDENTITY_INSERT [dbo].[UserRole] ON 
+
+GO
+INSERT [dbo].[UserRole] ([UserRoleId], [UserId], [RoleId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (1, 1, 1, CAST(N'2017-06-06 12:07:51.100' AS DateTime), CAST(N'2017-06-06 12:07:51.100' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.100' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.100' AS DateTime))
+GO
+INSERT [dbo].[UserRole] ([UserRoleId], [UserId], [RoleId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (2, 2, 2, CAST(N'2017-06-06 12:07:51.130' AS DateTime), CAST(N'2017-06-06 12:07:51.130' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.130' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.130' AS DateTime))
+GO
+INSERT [dbo].[UserRole] ([UserRoleId], [UserId], [RoleId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (3, 3, 3, CAST(N'2017-06-06 12:07:51.133' AS DateTime), CAST(N'2017-06-06 12:07:51.133' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.133' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.133' AS DateTime))
+GO
+INSERT [dbo].[UserRole] ([UserRoleId], [UserId], [RoleId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (4, 4, 4, CAST(N'2017-06-06 12:07:51.137' AS DateTime), CAST(N'2017-06-06 12:07:51.137' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.137' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.137' AS DateTime))
+GO
+INSERT [dbo].[UserRole] ([UserRoleId], [UserId], [RoleId], [ValidFrom], [ValidTo], [CreatedBy], [CreatedDate], [UpdatedBy], [UpdatedDate]) VALUES (5, 5, 5, CAST(N'2017-06-06 12:07:51.137' AS DateTime), CAST(N'2017-06-06 12:07:51.137' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.137' AS DateTime), 1, CAST(N'2017-06-06 12:07:51.137' AS DateTime))
+GO
+SET IDENTITY_INSERT [dbo].[UserRole] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Venue] ON 
 
@@ -855,7 +1036,27 @@ REFERENCES [dbo].[WinningMode] ([WinningModeId])
 GO
 ALTER TABLE [dbo].[Results] CHECK CONSTRAINT [FK_Results_WinningMode]
 GO
+ALTER TABLE [dbo].[RoleFeature]  WITH CHECK ADD  CONSTRAINT [FK_RoleFeature_FeatureId] FOREIGN KEY([FeatureId])
+REFERENCES [dbo].[Feature] ([FeatureId])
+GO
+ALTER TABLE [dbo].[RoleFeature] CHECK CONSTRAINT [FK_RoleFeature_FeatureId]
+GO
+ALTER TABLE [dbo].[RoleFeature]  WITH CHECK ADD  CONSTRAINT [FK_RoleFeature_RoleId] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[Role] ([RoleId])
+GO
+ALTER TABLE [dbo].[RoleFeature] CHECK CONSTRAINT [FK_RoleFeature_RoleId]
+GO
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRole_RoleId] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[Role] ([RoleId])
+GO
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRole_RoleId]
+GO
+ALTER TABLE [dbo].[UserRole]  WITH CHECK ADD  CONSTRAINT [FK_UserRole_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[User] ([UserId])
+GO
+ALTER TABLE [dbo].[UserRole] CHECK CONSTRAINT [FK_UserRole_UserId]
+GO
 USE [master]
 GO
-ALTER DATABASE [TestDatabase] SET  READ_WRITE 
+ALTER DATABASE [Testdatabase] SET  READ_WRITE 
 GO
